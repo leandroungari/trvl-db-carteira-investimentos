@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  database:
+    container_name: db-carteira-investimentos
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: teste
+      POSTGRES_USER: trvluser
+      POSTGRES_DB: carteira-investimentos-local
+    ports:
+      - 5432:5432
+    volumes: 
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
+    driver: local
+
+networks:
+  db:
+    driver: bridge
