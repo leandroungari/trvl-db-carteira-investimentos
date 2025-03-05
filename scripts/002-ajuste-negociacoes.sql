@@ -1,0 +1,1 @@
+alter table negociacoes add column quantidade decimal not null;
